@@ -24,10 +24,11 @@ void Shopping::PrintList() {
 // Apply Selection Sort algorithm
 void Shopping::SortByPrice() {
   std::vector<Goods>::iterator min = shopping_list_.end();
+  std::vector<Goods>::iterator end = shopping_list_.end();
   for (std::vector<Goods>::iterator i = shopping_list_.begin();
-      i != shopping_list_.end()-1; i++) {
-    for (std::vector<Goods>::iterator j = i; j != shopping_list_.end(); j++) {
-      if (min == shopping_list_.end()) {
+      i != end -1; i++) {
+    for (std::vector<Goods>::iterator j = i; j != end; j++) {
+      if (min == end) {
         min = j;
         continue;
       }
@@ -35,7 +36,7 @@ void Shopping::SortByPrice() {
         min = j;      
     }
     std::iter_swap(i, min);
-    min = shopping_list_.end();
+    min = end;
   }
 }
 
