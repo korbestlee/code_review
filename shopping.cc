@@ -32,9 +32,8 @@ void Shopping::SortByPrice() {
         min = j;
         continue;
       }
-      if (min->GetPrice() > j->GetPrice()) {
-        min = j;
-      }
+      if (min->GetPrice() > j->GetPrice())
+        min = j;      
     }
     std::iter_swap(i, min);
     min = shopping_list_.end();
